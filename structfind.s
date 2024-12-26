@@ -16,16 +16,15 @@ ProdInfo:
 .text
 .global _start
 _start:
-	ldr r0, =ProdList
-	ldr r1, =3
-	ldr r2, =ProdInfo
-	ldr r3, =3	
-	bl find
-	
-	1: b 1b  // done
+    ldr r0, =ProdList
+    ldr r1, =3
+    ldr r2, =ProdInfo
+    ldr r3, =3	
+    bl find
+    1: b 1b  // done
 // Your function starts here:
 find:
-	push {r5, r6, r7}
+    push {r5, r6, r7}
     ldr r5, [r0]
     ldr r6, [r0, #4]
     add r12, r0, #12
@@ -34,7 +33,7 @@ find:
     beq max_profit_end
     
 max_profit:
-	ldr r7, [r12], #PRODLIST_SIZE
+    ldr r7, [r12], #PRODLIST_SIZE
     cmp r7, r6
     ldrgt r5, [r12, #-12]
     movgt r6, r7
@@ -42,12 +41,12 @@ max_profit:
     bne max_profit
    
 max_profit_end:
-	mov r12, r2
+    mov r12, r2
     cmp r3, #0
     beq _end
     
 product_name:
-	ldr r1, [r12], #PRODINFO_SIZE
+    ldr r1, [r12], #PRODINFO_SIZE
     cmp r1, r5
     ldreq r0, [r12, #-4]
     beq _end
