@@ -11,13 +11,13 @@ _start:
 
 // `max_subarray_sum` using Kadane's algorithm
 subarraysum:
-	ldr r2, =0x80000000
+    ldr r2, =0x80000000
     add r1, r0, r1, lsl #2
-	ldr r3, [r0], #4
+    ldr r3, [r0], #4
     cmp r1, r0
     beq _end
 max_subarray_sum:
-	ldr r12, [r0], #4
+    ldr r12, [r0], #4
     add r3, r3, r12
     cmp r3, r12
     movlt r3, r12
@@ -26,6 +26,6 @@ max_subarray_sum:
     cmp r1, r0
     bne max_subarray_sum
 _end:
-	mov r0, r2
+    mov r0, r2
     bx lr
 	
