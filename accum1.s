@@ -5,9 +5,9 @@ Cmd: .string "+0+@-P"
 
 .global _start
 _start:
-	ldr r0, =Cmd
-	bl calc	
-	1: b 1b  // done
+    ldr r0, =Cmd
+    bl calc	
+1:  b 1b  // done
 
 // Your function starts here:
 calc:
