@@ -30,16 +30,16 @@ multiply:
     b accumulate
     
 add:
-	ldrsb r2, [r1], #1
+    ldrsb r2, [r1], #1
     add r0, r0, r2
     b accumulate
 
 subtract:
     ldrsb r2, [r1], #1
     subs r0, r0, r2
-	b accumulate
+    b accumulate
     
 op:
-	.word multiply, add, 0x0000 /* dummy label */, subtract
+    .word multiply, add, 0x0000 /* dummy label */, subtract
 	
 	
