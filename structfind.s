@@ -1,14 +1,14 @@
 // Some input data and testing code
 .data
 ProdList: 
-.word 0x1000, 10
-.word 0x1001, 11	// 11 is the maximum profit. Product_id=0x1001
-.word 0x1002, 9
+    .word 0x1000, 10
+    .word 0x1001, 11	// 11 is the maximum profit. Product_id=0x1001
+    .word 0x1002, 9
 
 ProdInfo:
-.word 0x1000, 0x200
-.word 0x1001, 0x210	// Product_id 0x1001 has name 0x210. Return 0x210.
-.word 0x1002, 0x220
+    .word 0x1000, 0x200
+    .word 0x1001, 0x210	// Product_id 0x1001 has name 0x210. Return 0x210.
+    .word 0x1002, 0x220
 
 .equ PRODLIST_SIZE, 8
 .equ PRODINFO_SIZE, 8

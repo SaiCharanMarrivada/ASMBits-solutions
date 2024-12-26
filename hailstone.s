@@ -17,7 +17,11 @@ sequence:
     lsreq r2, r1, #1
     add r0, r0, #1
     mov r1, r2
-    cmp r2, #1
+    rbit r3, r1
+    clz r3, r3
+    lsr r1, r3
+    add r0, r0, r3
+    cmp r1, #1
     bne sequence
     bx lr
 
