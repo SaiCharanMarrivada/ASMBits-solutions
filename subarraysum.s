@@ -9,7 +9,7 @@ _start:
     b _start        // End of testing code
 
 
-// Sum elements of array
+// `max_subarray_sum` using Kadane's algorithm
 subarraysum:
 	ldr r2, =0x80000000
     add r1, r0, r1, lsl #2
