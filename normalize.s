@@ -22,7 +22,7 @@ largest:
     movlo r3, r12
     subs r0, r0, #1
     bge largest
-    
+
 largest_end:
     pop {r0}
     lsl r0, #1
@@ -30,7 +30,7 @@ largest_end:
     subs r3, r3, #16
     bpl shift_left_all // largest element has less than 16 bits
     rsb r3, r3, #0
-    
+
 shift_right_all:
     ldr r12, [r1, r0, lsl #1]
     lsr r12, r3
@@ -38,7 +38,7 @@ shift_right_all:
     subs r0, r0, #2
     bge shift_right_all
     bx lr
-    
+
 shift_left_all:
     ldr r12, [r1, r0, lsl #1]
     lsl r12, r3
@@ -46,4 +46,4 @@ shift_left_all:
     subs r0, r0, #2
     bge shift_left_all
     bx lr
-     
+

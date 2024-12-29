@@ -4,7 +4,7 @@ Array: .word -1, -1, 3, -1, 3, -2
 .global _start
 _start:
     ldr r0, =Array
-    ldr r1, =6 
+    ldr r1, =6
     bl subarraysum
     b _start        // End of testing code
 
@@ -28,4 +28,4 @@ max_subarray_sum:
 _end:
     mov r0, r2
     bx lr
-	
+
