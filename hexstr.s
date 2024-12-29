@@ -8,6 +8,13 @@ _start:
     bl hexstr
     b _start  // End of testing code
 
+.macro hex_to_char
+    ands r12, r1, #15
+    ldrb r12, [r2, r12]
+    strb r12, [r0], #-1
+    lsr r1, r1, #4
+.endm
+
 // Convert number to string
 hexstr:
     cmp r1, #0
@@ -24,47 +31,23 @@ hexstr:
     subs r0, r0, #1
     ldr r12, =nhexdigits
     ldr pc, [r12, r3, lsl #2]
-    
-8: 
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-7: 
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-6: 
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-5: 
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-4: 
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-3: 
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-2: 
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-1: 
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
+
+8:
+    hex_to_char
+7:
+    hex_to_char
+6:
+    hex_to_char
+5:
+    hex_to_char
+4:
+    hex_to_char
+3:
+    hex_to_char
+2:
+    hex_to_char
+1:
+    hex_to_char
     bx lr
 
 zero:
@@ -74,12 +57,12 @@ zero:
     strb r12, [r0]
     bx lr
 
-nhexdigits:	
+nhexdigits:
     .word 0x0000 /* dummy */, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b
 
-lookup: 
+lookup:
     .byte '0', '1', '2', '3', '4', '5', '6'
     .byte '7', '8', '9', 'a', 'b', 'c', 'd'
     .byte 'e', 'f'
-	
-	
+
+
