@@ -24,170 +24,48 @@ hexstr:
     subs r0, r0, #1
     ldr r12, =nhexdigits
     ldr pc, [r12, r3, lsl #2]
-
-    // generated using `hexstr.py`, jump to the label based on
-    // no.of hex digits
-8:
+    
+8: 
     ands r12, r1, #15
     ldrb r12, [r2, r12]
     strb r12, [r0], #-1
     lsr r1, r1, #4
+7: 
     ands r12, r1, #15
     ldrb r12, [r2, r12]
     strb r12, [r0], #-1
     lsr r1, r1, #4
+6: 
     ands r12, r1, #15
     ldrb r12, [r2, r12]
     strb r12, [r0], #-1
     lsr r1, r1, #4
+5: 
     ands r12, r1, #15
     ldrb r12, [r2, r12]
     strb r12, [r0], #-1
     lsr r1, r1, #4
+4: 
     ands r12, r1, #15
     ldrb r12, [r2, r12]
     strb r12, [r0], #-1
     lsr r1, r1, #4
+3: 
     ands r12, r1, #15
     ldrb r12, [r2, r12]
     strb r12, [r0], #-1
     lsr r1, r1, #4
+2: 
     ands r12, r1, #15
     ldrb r12, [r2, r12]
     strb r12, [r0], #-1
     lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    bx lr
-7:
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
+1: 
     ands r12, r1, #15
     ldrb r12, [r2, r12]
     strb r12, [r0], #-1
     lsr r1, r1, #4
     bx lr
-6:
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    bx lr
-5:
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    bx lr
-4:
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    bx lr
-3:
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    bx lr
-2:
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    bx lr
-1:
-    ands r12, r1, #15
-    ldrb r12, [r2, r12]
-    strb r12, [r0], #-1
-    lsr r1, r1, #4
-    bx lr
-
 
 zero:
     mov r12, #0
@@ -196,10 +74,12 @@ zero:
     strb r12, [r0]
     bx lr
 
-nhexdigits:
+nhexdigits:	
     .word 0x0000 /* dummy */, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b
 
-lookup:
+lookup: 
     .byte '0', '1', '2', '3', '4', '5', '6'
     .byte '7', '8', '9', 'a', 'b', 'c', 'd'
     .byte 'e', 'f'
+	
+	
