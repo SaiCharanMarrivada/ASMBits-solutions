@@ -34,62 +34,22 @@ lcg:
     mov r0, r2
     bx lr
 
-_0:
+7:
+    mla r2, r1, r2, r3
+6:
+    mla r2, r1, r2, r3
+5:
+    mla r2, r1, r2, r3
+4:
+    mla r2, r1, r2, r3
+3:
+    mla r2, r1, r2, r3
+2:
+    mla r2, r1, r2, r3
+1:
+    mla r2, r1, r2, r3
+0:
     mov r0, r2
     bx lr
-_1:
-    mla r2, r1, r2, r3
-    mov r0, r2
-    bx lr
-_2:
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mov r0, r2
-    bx lr
-_3:
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mov r0, r2
-    bx lr
-_4:
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mov r0, r2
-    bx lr
-_5:
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mov r0, r2
-    bx lr
-
-_6:
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mov r0, r2
-    bx lr
-
-_7:
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mov r0, r2
-    bx lr
-
 remaining_iterations:
-    .word _0, _1, _2, _3, _4, _5, _6, _7//, _8, _9
-
-
+    .word 0b 1b 2b 3b 4b 5b 6b 7b

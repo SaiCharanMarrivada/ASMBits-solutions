@@ -18,7 +18,7 @@ _start:
 // Convert number to string
 hexstr:
     cmp r1, #0
-    beq zero // handle zero separately
+    beq 0f // handle zero separately
     clz r2, r1
     rsb r2, r2, #32
     lsr r3, r2, #2
@@ -50,7 +50,7 @@ hexstr:
     hex_to_char
     bx lr
 
-zero:
+0:
     mov r12, #0
     strb r12, [r0, #1]
     mov r12, #48
