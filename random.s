@@ -52,4 +52,4 @@ lcg:
     mov r0, r2
     bx lr
 remaining_iterations:
-    .word 0b 1b 2b 3b 4b 5b 6b 7b
+    .word 0b, 1b, 2b, 3b, 4b, 5b, 6b, 7b
