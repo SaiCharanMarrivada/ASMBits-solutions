@@ -18,14 +18,9 @@ random:
     ldr pc, [r12, r0, lsl #2]
 
 lcg:
+    .rept 8
     mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
-    mla r2, r1, r2, r3
+    .endr
     subs r12, #1
     bne lcg
     ands r0, r0, #7
