@@ -12,24 +12,22 @@ _start:
 // Parse a decimal string
 decstr:
     ldrb r1, [r0]
-    cmp r1, #45
+    cmp r1, #'-'
     moveq r1, #1
-    sub sp, sp, #4
-    str r1, [sp, #4]
-    addeq r0, #1
+    push {r1}
+    addeq r0, r0, #1
     mov r2, #0
     mov r12, #10
 string_to_decimal:
     ldrb r1, [r0], #1
-    subs r3, r1, #48
+    subs r3, r1, #'0'
     mlage r2, r12, r2, r3
     cmp r1, #0
     bne string_to_decimal
     mov r0, r2
-    ldr r1, [sp, #4]
+    pop {r1}
     cmp r1, #1
-    rsbeq r0, #0
-    add sp, #4
+    rsbeq r0, r0, #0
     bx lr
 
 
