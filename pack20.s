@@ -23,40 +23,10 @@ pack20:
     strb r2, [r0], #1
     strb r3, [r0], #1
     mov r2, sp
+    .rept 17
     ldrb r3, [r2], #4
     strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
-    ldrb r3, [r2], #4
-    strb r3, [r0], #1
+    .endr
     bx lr
 
 
