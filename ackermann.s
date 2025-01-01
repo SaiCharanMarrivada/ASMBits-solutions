@@ -8,22 +8,25 @@ _start:
 .global ackermann
 ackermann:
     cmp r0, #0
-    addeq r0, r1, #1
-    bxeq lr
+    beq base_case
     
     cmp r1, #0
     bne recursive_case
-    sub r0, r0, #1
+    subs r0, r0, #1
     mov r1, #1
+    beq base_case
     b ackermann // tail-call
-    bx lr
     
 recursive_case:
     push {r0, lr}
-    sub r1, r1, #1
+    subs r1, r1, #1
     bl ackermann
     mov r1, r0
     pop {r0, lr}
-    sub r0, r0, #1
+    subs r0, r0, #1
+    beq base_case
     b ackermann
-    bx lr	
+
+base_case:
+    add r0, r1, #1
+    bx lr
