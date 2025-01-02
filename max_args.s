@@ -4,7 +4,7 @@ _start:
     mov r0, #2
     mov r1, #1
     mov r2, #2
-
+	
     bl max
 1:  b 1b  // done
 
@@ -27,28 +27,28 @@ _max:
     subs r12, #1
     bne _max
     bx lr
-
-_0:
-    bx lr
-_1:
+       
+1:
     mov r0, r1
+0:
     bx lr
-
-_2:
+    
+2:
     mov r0, r1
     cmp r2, r0
     movgt r0, r2
     bx lr
 
-_3:
+3:
     mov r0, r1
     cmp r2, r0
     movgt r0, r2
     cmp r3, r0
     movgt r0, r3
-    bx lr
-
+    bx lr  
+    
+    
 nargs:
-    .word _0, _1, _2, _3
-
-
+    .word 0b, 1b, 2b, 3b
+	
+	
