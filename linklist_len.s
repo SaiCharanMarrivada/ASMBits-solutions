@@ -14,14 +14,17 @@ listlen:
     bxeq lr
     ldr r0, [r0]
     mov r2, #1
-    cmp r0, #0
-    bne length
-    mov r0, r2
-    bx lr
+    tst r0, r0
+    beq _end
 length:
     ldr r0, [r0]
     add r2, r2, #1
-    cmp r0, #0
+    tst r0, r0
+    ldrne r0, [r0]
+    addne r2, r2, #1
+    tst r0, r0
     bne length
+_end:
     mov r0, r2
     bx lr
+
