@@ -9,13 +9,16 @@ _start:
     b _start        // End of testing code
 
 // Sum elements of array
-arraysum:
-    mov r3, #0
+arraysum:   
+    ldr r3, [r0], #4
+    subs r1, r1, #1
+    beq _end
 sum:
     ldr r2, [r0], #4
     add r3, r2
-    subs r1, #1
+    subs r1, r1, #1
     bne sum
+_end:
     mov r0, r3
     bx lr
 

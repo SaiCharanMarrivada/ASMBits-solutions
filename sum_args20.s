@@ -15,55 +15,28 @@ initloop:
     mov r1, #2
     mov r2, #3
     mov r3, #4
-
+	
     bl sum
     add sp, sp, #64	// Clean up stack
 1:  b 1b  // done
 
 sum:
-    sub sp, sp, #16
     mov r12, sp
-    str r0, [r12], #4
-    str r1, [r12], #4
-    str r2, [r12], #4
-    str r3, [r12], #4
+    push {r0-r3}
+    push {r4}
     add r0, r1
     add r0, r2
     add r0, r3
-    // 16 iterations unrolled
-    ldr r1, [r12], #4
-    add r0, r1//, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
-    ldr r1, [r12], #4
-    add r0, r1, r0
+.rept 4
+    ldm r12, {r1, r2, r3, r4}
+    add r0, r1
+    add r0, r2
+    add r0, r3
+    add r0, r4
+    add r12, r12, #16
+.endr
+    pop {r4}
     add sp, sp, #16
     bx lr
-
-
+    
+	
