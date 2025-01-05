@@ -9,6 +9,8 @@ _start:
 
 .global load
 load:
+    tst r0, #3
+    beq word_aligned
     ldrb r3, [r0, #0]
     ldrb r12, [r0, #1]
     orr r3, r12, lsl #8
@@ -17,3 +19,9 @@ load:
     ldrb r12, [r0, #3]
     orr r0, r3, r12, lsl #24
     bx lr
+
+word_aligned:
+    ldr r0, [r0]
+    bx lr
+	
+	
