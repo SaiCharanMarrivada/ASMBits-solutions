@@ -17,12 +17,14 @@ array_insert:
     str r3, [r0, r2, lsl #2]
     cmp r1, r2 // insert at the end of the array
     bxeq lr
-    sub r1, r1, #1
+    add r1, r0, r1, lsl #2 
+    add r0, r0, r2, lsl #2
+
 insert:
-    add r2, r2, #1
-    ldr r3, [r0, r2, lsl #2]
-    str r12, [r0, r2, lsl #2]
+    ldr r3, [r0, #4]!
+    str r12, [r0]
     mov r12, r3
-    cmp r1, r2
-    bhs insert
+    cmp r1, r0
+    bne insert
     bx lr
+
