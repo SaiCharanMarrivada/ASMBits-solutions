@@ -28,12 +28,12 @@ sum:
     add r0, r2
     add r0, r3
 .rept 4
-    ldm r12, {r1, r2, r3, r4}
+    ldm r12!, {r1, r2, r3, r4}
     add r0, r1
     add r0, r2
     add r0, r3
     add r0, r4
-    add r12, r12, #16
+    // add r12, r12, #16
 .endr
     pop {r4}
     add sp, sp, #16
