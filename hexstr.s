@@ -29,27 +29,14 @@ hexstr:
     strb r12, [r0, r3] // null byte
     add r0, r0, r3
     subs r0, r0, #1
-    ldr r12, =nhexdigits
+    ldr r12, =nibbles
     ldr pc, [r12, r3, lsl #2]
-
-8:
-    hex_to_char
-7:
-    hex_to_char
-6:
-    hex_to_char
-5:
-    hex_to_char
-4:
-    hex_to_char
-3:
-    hex_to_char
-2:
-    hex_to_char
-1:
-    hex_to_char
+    
+.irp n, 8, 7, 6, 5, 4, 3, 2, 1
+\n: 
+	hex_to_char
+.endr
     bx lr
-
 0:
     mov r12, #0
     strb r12, [r0, #1]
@@ -57,9 +44,8 @@ hexstr:
     strb r12, [r0]
     bx lr
 
-nhexdigits:
+nibbles:
     .word 0x0000 /* dummy */, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b
 
 lookup:
     .ascii "0123456789abcdef"
-
