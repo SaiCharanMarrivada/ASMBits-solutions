@@ -61,8 +61,5 @@ nhexdigits:
     .word 0x0000 /* dummy */, 1b, 2b, 3b, 4b, 5b, 6b, 7b, 8b
 
 lookup:
-    .byte '0', '1', '2', '3', '4', '5', '6'
-    .byte '7', '8', '9', 'a', 'b', 'c', 'd'
-    .byte 'e', 'f'
-
+    .ascii "0123456789abcdef"
 
