@@ -23,6 +23,7 @@ loadexec:
     cmp r2, #32 // check if there are atleast 32 bytes to copy
     blo residual
     push {r4-r11}
+    subs r2, r2, #32 // guaranteed to copy atleast 32 bytes
 copy32:
     ldmia r1!, {r4-r11}
     stmia r0!, {r4-r11}
