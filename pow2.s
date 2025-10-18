@@ -6,8 +6,6 @@ _start:
 
 pow2:
     sub r1, r0, #1
-    ands r2, r1, r0
-    movne r0, #0
-    // bxne lr
+    bics r2, r1, r0
     moveq r0, #1
     bx lr
