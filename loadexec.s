@@ -28,7 +28,7 @@ copy32:
     stmia r0!, {r4-r11}
     subs r2, r2, #32
     bgt copy32
-    ands r2, r2, #32
+    ands r2, r2, #31
     pop {r4-r11}
     bxeq lr
 residual:
